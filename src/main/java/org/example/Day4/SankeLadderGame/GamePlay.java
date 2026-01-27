@@ -114,4 +114,7 @@ public class GamePlay {
         }
 
     }
+    public String toString(){
+        return "this is toString class";
+    }
 }
