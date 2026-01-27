@@ -17,9 +17,8 @@ public class Main {
         GamePlay gp=new GamePlay();
 
 //        gp.playeTheGame(playerPosition);
-        gp.witTwoPlayer();
-
-
+//        gp.witTwoPlayer();
 
     }
+
 }
