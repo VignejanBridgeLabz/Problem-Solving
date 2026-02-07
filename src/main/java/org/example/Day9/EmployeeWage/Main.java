@@ -1,4 +1,4 @@
-package org.example.Day9.AddressBook.EmployeeWage;
+package org.example.Day9.EmployeeWage;
 
 import org.example.Day8.EmployeeWage.EmployeeWage;
 

@@ -1,9 +1,12 @@
-package org.example.Day9.AddressBook;
+package org.example.Day10.AddressBookSystem;
 
 
-import org.example.Day9.AddressBook.AddressBook;
+import org.example.Day10.AddressBookSystem.AddressBookSys;
+
 
 import java.util.Scanner;
+
+import static org.example.Day10.AddressBookSystem.AddMultiplePerson.addMultiPerson;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,7 +14,7 @@ public class Main {
 
         System.out.println("Welcome to AddressBook System");
 
-        AddressBook addressBook = new AddressBook();
+        AddressBookSys addressBook = new AddressBookSys();
 
         while (true) {
             System.out.println("1.Add Contact");
@@ -23,6 +26,11 @@ public class Main {
             int choice = Integer.parseInt(sc.nextLine());
 
             if (choice == 1) {
+
+//                UseCase-1
+                System.out.println("Enter the Address Book  :");
+                String tname=sc.nextLine();
+
                 System.out.println("Enter your first name:");
                 String firstName = sc.nextLine();
                 System.out.println("Enter your last name:");
@@ -44,11 +52,8 @@ public class Main {
                 Contacts contacts = new Contacts(firstName, lastName, address, state, city, zipCode, phoneNumber, email);
                 addressBook.addContact(contacts);
 
-                System.out.println("Do you want to  add another  contact? (Y/N)");
-                String addAnotherContact = sc.nextLine();
-                if (addAnotherContact.equals("Y")) {
-                    continue;
-                }
+                addMultiPerson(tname,new Contacts(firstName, lastName, address, state, city, zipCode, phoneNumber, email));
+
 
             } else if (choice == 2) {
                 System.out.println("If you want Edit the Exit List Of Contacts...");
@@ -56,7 +61,7 @@ public class Main {
                 if (s.equalsIgnoreCase("Yes")) {
                     System.out.println("Enter your firstname: ");
                     String firstName1 = sc.nextLine();
-                    AddressBook.editContact(sc, firstName1);
+                    AddressBookSys.editContact(sc, firstName1);
                 } else {
                     System.out.println("Thank you...");
                     System.out.println("If you want continue");
@@ -93,26 +98,21 @@ public class Main {
                         }
                     }
                 }
-                }
-                 else if (choice == 4) {
-                    if (addressBook.contacts.isEmpty()) {
-                        System.out.println("This list is empty");
-                        System.out.println();
-                    } else {
-                        System.out.println(addressBook.contacts);
-                        System.out.println();
-                    }
-                }
-              else if (choice == 5) {
-                    System.out.println("Program Exit");
-                    break;
+            }
+            else if (choice == 4) {
+                if (addressBook.contacts.isEmpty()) {
+                    System.out.println("This list is empty");
+                    System.out.println();
+                } else {
+                    System.out.println(addressBook.contacts);
+                    System.out.println();
                 }
             }
+            else if (choice == 5) {
+                System.out.println("Program Exit");
+                break;
+            }
         }
-
-
-
-
-
+    }
 
 }
