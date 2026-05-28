@@ -79,5 +79,6 @@ public class StateCensusAnalyser {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
     }
 }
